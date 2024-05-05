@@ -12,9 +12,16 @@ Platform: .Net 8.0
 
 1. Simply clone this repository and upload MySQL database:
 
-    git clone https://github.com/skorupcia/HotelManagement
+        git clone https://github.com/skorupcia/HotelManagement
 
 2. Enjoy!
+
+## Troubleshooting
+
+### - System.Data.SqlClient.SqlException: 
+„An attempt to attach an auto-named database for file [...] A database with the same name exists, or specified file cannot be opened, or it is located on UNC share.”
+
+### FIX: Update Functioncs.cs file with prepared line (remove #)
 
 
 ## Preview
