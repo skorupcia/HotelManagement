@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace Hotel
 {
@@ -18,7 +15,14 @@ namespace Hotel
 
         public Functions()
         {
-            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PC\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
+            string relativePath = @"..\..\Hotel.mdf";
+            string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
+            string absolutePath = Path.GetFullPath(Path.Combine(projectFolder, relativePath));
+
+            //When relative path is not working, adjust path and use this:
+            //ConStr = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PC\source\repos\Hotel\Hotel\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
+            
+            ConStr = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={absolutePath};Integrated Security=True;Connect Timeout=30";
             Con = new SqlConnection(ConStr);
             Cmd = new SqlCommand();
             Cmd.Connection = Con;
@@ -27,7 +31,7 @@ namespace Hotel
         public DataTable GetData(string Query)
         {
             dt = new DataTable();
-            Sda = new SqlDataAdapter(Query, ConStr);
+            Sda = new SqlDataAdapter(Query, Con);
             Sda.Fill(dt);
             return dt;
         }
