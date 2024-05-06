@@ -16,14 +16,6 @@ Platform: .Net 8.0
 
 2. Enjoy!
 
-## Troubleshooting
-
-### - System.Data.SqlClient.SqlException: 
-„An attempt to attach an auto-named database for file [...] A database with the same name exists, or specified file cannot be opened, or it is located on UNC share.”
-
-### FIX: Update Functioncs.cs file with prepared line (remove #)
-
-
 ## Preview
 ![Logowanie](https://github.com/skorupcia/HotelManagement/assets/136620461/f3f3d834-43ab-4ab6-9132-b9df23c6f000)
 ![Goscie](https://github.com/skorupcia/HotelManagement/assets/136620461/8e63df21-e451-4801-b341-ed64ceead209)
