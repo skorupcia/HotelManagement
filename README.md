@@ -6,8 +6,6 @@ Simple application to manage guests and rooms in your private mansion.
 
 Framework: .Net 4.8
 
-Platform: .Net 8.0
-
 ## How to use
 
 1. Simply clone this repository and upload MySQL database:
